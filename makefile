@@ -1,15 +1,15 @@
-.PHONY: test mammoth-plus.js npm-install
+.PHONY: test mammoth-xp.js npm-install
 
 test:
 	npm test
 
-setup: npm-install mammoth-plus.min.js
+setup: npm-install mammoth-xp.min.js
 
 npm-install:
 	npm install
 
-mammoth-plus.js:
-	node_modules/.bin/browserify lib/index.js --standalone mammoth-plus -p browserify-prepend-licenses > dist/$@
+mammoth-xp.js:
+	node_modules/.bin/browserify lib/index.js --standalone mammoth-xp -p browserify-prepend-licenses > dist/$@
 
-mammoth-plus.min.js: mammoth-plus.js
-	node_modules/.bin/uglifyjs dist/mammoth-plus.js -c > dist/$@
+mammoth-xp.min.js: mammoth-xp.js
+	node_modules/.bin/uglifyjs dist/mammoth-xp.js -c > dist/$@
